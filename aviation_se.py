@@ -86,7 +86,7 @@ def search(search_input, page):
         return
 
     site_str = " OR ".join(f"site:{site}" for site in site_list)
-    query = f"intext:\"{search_input}\" -intext:\"sold out\" {site_str}"
+    query = f"intext:\"{search_input}\" -intext:\"sold out\" -intext:\"no longer available\" {site_str}"
 
     params = {
       "api_key": st.secrets["SERPAPI_API_KEY"],
