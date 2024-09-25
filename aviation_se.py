@@ -112,7 +112,11 @@ def search(search_input, page):
 
 
 st.title('Find Aviation Parts')
-search_input = st.text_input("Search Term / Part Number", placeholder="KX155A", on_change=lambda: setattr(st.session_state, 'page', 1))
+search_input = st.text_input(
+        "Search Term / Part Number",
+        placeholder="KX155A / 069-01032-0101",
+        on_change=lambda: setattr(st.session_state, 'page', 1)
+        )
 
 if "page" not in st.session_state:
     st.session_state.page = 1
